@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0f2027">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>404 Heart Not Found</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to top,#2b1055,#7597de,#ff9a9e);
+    color: #ffffff;
+    text-align: center;
+    overflow-x: hidden;
+}
+
+.container {
+    padding: 40px 15px;
+    background: rgba(0,0,0,0.25);
+    backdrop-filter: blur(6px);
+    min-height: 100vh;
+}
+
+h1 {
+    font-size: clamp(22px, 5vw, 40px);
+    text-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+p {
+    font-size: 16px;
+    max-width: 600px;
+    margin: 20px auto;
+    line-height: 1.6;
+}
+
+button {
+    padding: 12px 25px;
+    margin: 10px auto;
+    font-size: 16px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+    width: 90%;
+    max-width: 300px;
+    display: block;
+}
+
+.primary {
+    background: linear-gradient(45deg, #8e2de2, #4a00e0);
+    color: white;
+    box-shadow: 0 0 15px rgba(142,45,226,0.7);
+}
+
+.secondary {
+    background: linear-gradient(45deg, #ff6a88, #ff99ac);
+    color: white;
+}
+
+button:hover {
+    transform: scale(1.05);
+}
+
+.hidden {
+    display: none;
+}
+
+#message {
+    transition: opacity 1s ease, transform 1s ease;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+#message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.heart {
+    font-size: 50px;
+    animation: beat 1s infinite;
+}
+
+@keyframes beat {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+@media (max-width: 480px) {
+    p { font-size: 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>System.out.println("The reason I smile is you 💙");</h1>
+
+<p>
+if (you.smile()) { <br>
+&nbsp;&nbsp;I don’t know when it started, but being around you makes everything lighter <br>
+} <br><br>
+
+while (life == true) { <br>
+&nbsp;&nbsp;At this moment in my life, you’re the one I feel for. <br>
+}
+</p>
+
+<button class="primary" onclick="showMessage()">Click to Execute My Feelings</button>
+
+<div id="message" class="hidden">
+
+    <p>
+        During a time when I was trying to heal,<br>
+        you became someone who made things lighter.<br>
+        I don’t know when it happened,<br>
+        but somewhere in that healing process,<br>
+        I started feeling something for you.
+        <br><br>
+        There might be many people in this world,<br>
+        but to me… you feel rare. Like a blue rose. 💙
+        <br><br>
+        I may not sing perfectly,<br>
+        but I recorded a song for you because you matter that much.
+    </p>
+
+    <p><b>Tap play to hear something special 💙</b></p>
+
+    <audio controls preload="auto">
+        <source src="yoursong.mp3" type="audio/mpeg">
+        Your browser does not support audio.
+    </audio>
+
+     <h2>Known Bug in My System 🐞</h2>
+    <p>
+        Brain: Working Fine ✔ <br>
+        Heart: Feels lighter when you’re around 💓
+    </p>
+
+    <h2>Final Question...</h2>
+    <p>It’s okay if you don’t, but I wanted to know — do you feel something for me too?</p>
+
+    <button class="primary" onclick="yesClicked()">YES ❤️</button>
+    <button class="secondary" onclick="thinkClicked()">LET ME THINK 🤍</button>
+
+    <div id="response"></div>
+
+</div>
+
+</div>
+
+<script>
+function showMessage() {
+    const msg = document.getElementById("message");
+    msg.classList.remove("hidden");
+    setTimeout(() => {
+        msg.classList.add("show");
+    }, 100);
+}
+
+function yesClicked() {
+
+    if (navigator.vibrate) {
+        navigator.vibrate(200);
+    }
+
+    document.getElementById("response").innerHTML = 
+        "<div class='heart'>💙</div>\
+        <h2>Best Decision Ever Executed!</h2>\
+        <p>Send me this on Instagram:</p>\
+        <h3>'Blue rose 🌹💙'</h3>\
+        <p>Opening Instagram...</p>";
+
+    setTimeout(() => {
+        window.open('https://www.instagram.com/pratikk.24_/', '_blank');
+    }, 2500);
+}
+
+function thinkClicked() {
+    document.getElementById("response").innerHTML = 
+        "<h3>Take your time 💙</h3>\
+        <p>Some feelings deserve patience.</p>";
+}
+</script>
+
+</body>
+</html>
