@@ -170,17 +170,26 @@ function yesClicked() {
         navigator.vibrate(200);
     }
 
+    let countdown = 10;
+
     document.getElementById("response").innerHTML = 
         "<div class='heart'>💙</div>\
         <h2>Best Decision Ever Executed!</h2>\
         <p>Send me this on Instagram:</p>\
         <h3>'Blue rose 🌹💙'</h3>\
-        <p>Opening Instagram...</p>";
+        <p>Opening Instagram in <span id='timer'>10</span> seconds...</p>";
 
-    setTimeout(() => {
-        window.open('https://www.instagram.com/pratikk.24_/', '_blank');
-    }, 2500);
+    let interval = setInterval(function() {
+        countdown--;
+        document.getElementById("timer").innerText = countdown;
+
+        if (countdown <= 0) {
+            clearInterval(interval);
+            window.location.href = 'https://www.instagram.com/pratikk.24_/';
+        }
+    }, 1000);
 }
+
 
 function thinkClicked() {
     document.getElementById("response").innerHTML = 
@@ -191,3 +200,4 @@ function thinkClicked() {
 
 </body>
 </html>
+
